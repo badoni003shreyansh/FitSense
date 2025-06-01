@@ -1,5 +1,6 @@
 import React from "react";
-
+import { BadgeAlert } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 function FormDropDown({ options, label, register, name, errors }) {
   const validationRules = {
     required: { value: true, message: `This field is required` },
@@ -14,7 +15,7 @@ function FormDropDown({ options, label, register, name, errors }) {
           defaultValue={""}
         >
           <option value="" disabled>
-            Select an option
+            Choose an Option
           </option>
           {options.map((option, index) => (
             <option key={index} value={option.value}>
@@ -24,19 +25,12 @@ function FormDropDown({ options, label, register, name, errors }) {
         </select>
         {/* Custom arrow */}
         <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center">
-          <svg
-            className="w-4 h-4 text-purple-700"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M19 9l-7 7-7-7" />
-          </svg>
+          <ChevronDown height={20} width={20} className="text-purple-800" />
         </div>
       </div>
       {errors?.[name] && (
-        <span className="p-2 text-red-500 text-sm">
+        <span className="flex flex-row p-2 text-red-500 text-sm gap-1">
+          <BadgeAlert color="#fb2c36" height={19} width={18} />
           {errors?.[name]?.message}
         </span>
       )}

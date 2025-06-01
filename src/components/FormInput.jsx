@@ -1,8 +1,18 @@
+import { BadgeAlert } from "lucide-react";
 import React from "react";
 
 export default function FormInput(props) {
-  const { label, type, register, name, pattern, maxLength, minLength, errors } =
-    props;
+  const {
+    label,
+    type,
+    register,
+    name,
+    pattern,
+    maxLength,
+    minLength,
+    errors,
+    placeholder,
+  } = props;
 
   const validationRules = {
     required: { value: true, message: `This field is required` },
@@ -18,9 +28,11 @@ export default function FormInput(props) {
         className="px-4 py-2 border rounded-xl bg-gray-100 text-purple-950 focus:outline-none focus:ring-2 focus:ring-purple-700"
         type={type}
         {...(register && name ? register(name, validationRules) : {})}
+        placeholder={placeholder}
       />
       {errors?.[name] && (
-        <span className="p-2 text-red-500 text-sm">
+        <span className="flex flex-row p-2 text-red-500 text-sm gap-1">
+          <BadgeAlert color="#fb2c36" height={19} width={18} />
           {errors?.[name]?.message}
         </span>
       )}

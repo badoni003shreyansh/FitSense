@@ -34,19 +34,28 @@ function App() {
       });
   };
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen w-full gap-8 p-16 pt-32 bg-gray-50">
-      <h1 className="text-8xl font-extrabold text-purple-700 text-shadow-purple-700 tracking-tight drop-shadow-lg">
-        FitSense
+    <div
+      className="flex flex-col items-center justify-start min-h-screen w-full gap-8 p-16 pt-32"
+      style={{
+        background: `linear-gradient(to bottom, #d2b4de, #a569bd, #8e44ad, #5b2c87, #2d1b47, #0d051a)`,
+      }}
+    >
+      <h1 className="text-8xl font-extrabold text-[#46206f] tracking-tight drop-shadow-lg">
+        TrainWise
       </h1>
-      <h3 className="text-3xl font-medium text-gray-600 mb-4">
-        The AI fitness navigator for you
-      </h3>
+
+      <p className="text-xl md:text-2xl text-gray-800 font-medium max-w-2xl text-center mt-4">
+        Your Digital Coach for Real-World Gains
+      </p>
       {error && <Alert message={error} />}
       {/* Form */}
       <FormWrapper onSubmit={onSubmit} loading={loading} />
 
       {/* Answer below */}
       {answer && <FormAnswer answers={answer} />}
+      <div className="text-gray-500 text-sm mt-4">
+        <p>Made with ❤️ by Shreyansh Badoni</p>
+      </div>
     </div>
   );
 }

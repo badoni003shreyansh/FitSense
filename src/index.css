@@ -41,7 +41,7 @@
 /* Custom base styles */
 @layer base {
   body {
-    @apply bg-[#0d051a] text-[#d2b4de] font-sans overflow-y-auto;
+    @apply bg-[#0d051a] text-[#d397eb] font-sans overflow-y-auto;
   }
 
   h1 {
@@ -112,7 +112,7 @@
   }
 
   .btn-outline {
-    @apply border border-[#8e44ad] text-[#8e44ad] hover:bg-[#8e44ad] hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-300;
+    @apply border border-[#8e44ad] text-[#ffffff] hover:bg-[#8e44ad] hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-300;
   }
 
   .btn-outline-light {

@@ -40,6 +40,8 @@ function FormWrapper({ onSubmit, loading }) {
               message: "Please enter a number between 1 and 7",
             }}
             errors={errors}
+            placeholder="e.g., 3, 5, 7"
+            maxLength={{ value: 1, message: "Max 1 character allowed" }}
           />
         </div>
 
@@ -55,6 +57,7 @@ function FormWrapper({ onSubmit, loading }) {
           maxLength={{ value: 100, message: "Max 20 characters allowed" }}
           minLength={{ value: 3, message: "At least 3 characters" }}
           errors={errors}
+          placeholder="e.g., Lose weight, Gain muscle, Improve endurance"
         />
         <div className="flex flex-row w-full justify-between">
           <FormDropDown
@@ -73,14 +76,14 @@ function FormWrapper({ onSubmit, loading }) {
           />
         </div>
         <button
-          className="btn-primary px-4 mx-auto my-4 min-w-32 flex items-center justify-center"
+          className="btn-primary rounded-3xl px-4 mx-auto my-4 min-w-32 place-items-center justify-center"
           type="submit"
           disabled={isSubmitting}
         >
           {loading ? (
             <Loader color="#fff" className="animate-spin" />
           ) : (
-            "Submit"
+            "Make My Plan!!"
           )}
         </button>
       </form>
