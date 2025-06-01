@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/* Royal Purple Color utility classes */
+.first-color {
+  background: #0d051a; /* Deepest royal purple - almost black */
+}
+.second-color {
+  background: #1a0b2e; /* Deep royal purple */
+}
+.third-color {
+  background: #2d1b47; /* Rich dark purple */
+}
+.fourth-color {
+  background: #4a2c6b; /* Medium-dark royal purple */
+}
+.fifth-color {
+  background: #5b2c87; /* Medium royal purple */
+}
+.sixth-color {
+  background: #7b3fa0; /* Bright royal purple */
+}
+.seventh-color {
+  background: #8e44ad; /* Vibrant royal purple */
+}
+.eighth-color {
+  background: #a569bd; /* Light royal purple */
+}
+.ninth-color {
+  background: #b19cd9; /* Soft lavender purple */
+}
+.tenth-color {
+  background: #d2b4de; /* Very light royal purple */
+}
+.eleventh-color {
+  background: #e8daef; /* Pale purple accent */
+}
+.twelfth-color {
+  background: #f4ecf7; /* Whisper purple - almost white */
+}
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply bg-[#0d051a] text-[#d2b4de] font-sans overflow-y-auto;
+  }
+
+  h1 {
+    @apply text-[#a569bd] font-bold text-4xl;
+  }
+
+  h2 {
+    @apply text-[#8e44ad] font-bold text-3xl;
+  }
+
+  h3 {
+    @apply text-blue-800 font-bold text-2xl;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply text-[#5b2c87] text-xl;
+  }
+
+  a {
+    @apply text-[#b19cd9] hover:text-[#a569bd] underline underline-offset-2 transition-colors duration-300;
+  }
+
+  button {
+    @apply bg-[#4a2c6b] text-[#e8daef] px-4 py-2 rounded-md shadow-md hover:bg-[#7b3fa0] hover:text-white transition-all duration-300;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply border border-[#4a2c6b] bg-[#1a0b2e] text-[#e8daef] placeholder:text-[#b19cd9] focus:border-[#8e44ad] focus:ring-[#7b3fa0] rounded-md transition-all duration-300;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .card {
+    @apply bg-[#2d1b47] border border-[#4a2c6b] rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-[#7b3fa0] transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply bg-[#1a0b2e] border border-[#2d1b47] rounded-2xl p-6 shadow-lg hover:bg-[#2d1b47] transition-all duration-300;
+  }
+
+  .card-light {
+    @apply bg-[#4a2c6b] border border-[#5b2c87] rounded-2xl p-6 shadow-lg hover:bg-[#5b2c87] transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-block px-3 py-1 text-sm font-semibold text-[#f4ecf7] bg-[#7b3fa0] rounded-full shadow-sm;
+  }
+
+  .badge-primary {
+    @apply inline-block px-3 py-1 text-sm font-semibold text-white bg-[#8e44ad] rounded-full shadow-sm;
+  }
+
+  .badge-secondary {
+    @apply inline-block px-3 py-1 text-sm font-semibold text-[#0d051a] bg-[#b19cd9] rounded-full shadow-sm;
+  }
+
+  .btn-primary {
+    @apply bg-[#8e44ad] hover:bg-[#a569bd] text-white hover:text-[#0d051a] font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-[#5b2c87] hover:bg-[#7b3fa0] text-[#e8daef] hover:text-white font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply border border-[#8e44ad] text-[#8e44ad] hover:bg-[#8e44ad] hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-300;
+  }
+
+  .btn-outline-light {
+    @apply border border-[#b19cd9] text-[#b19cd9] hover:bg-[#b19cd9] hover:text-[#0d051a] font-medium py-2 px-4 rounded-lg transition-all duration-300;
+  }
+
+  .btn-royal {
+    @apply bg-gradient-to-r from-[#4a2c6b] via-[#7b3fa0] to-[#8e44ad] text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-royal-outline {
+    @apply bg-transparent border-2 border-[#7b3fa0] text-[#a569bd] hover:bg-[#7b3fa0] hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+
+  .royal-gradient {
+    @apply bg-gradient-to-br from-[#0d051a] via-[#2d1b47] to-[#7b3fa0];
+  }
+
+  .royal-gradient-light {
+    @apply bg-gradient-to-br from-[#5b2c87] via-[#8e44ad] to-[#b19cd9];
+  }
+
+  .royal-gradient-subtle {
+    @apply bg-gradient-to-br from-[#1a0b2e] via-[#2d1b47] to-[#4a2c6b];
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#8e44ad] via-[#a569bd] to-[#d2b4de] bg-clip-text text-transparent;
+  }
+
+  .shadow-royal {
+    @apply shadow-lg;
+    box-shadow: 0 10px 15px -3px rgba(74, 44, 107, 0.5),
+      0 4px 6px -2px rgba(74, 44, 107, 0.3);
+  }
+
+  .shadow-royal-xl {
+    @apply shadow-2xl;
+    box-shadow: 0 25px 50px -12px rgba(45, 27, 71, 0.8),
+      0 10px 20px -5px rgba(45, 27, 71, 0.4);
+  }
+
+  .border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(#2d1b47, #2d1b47) padding-box,
+      linear-gradient(to right, #7b3fa0, #8e44ad) border-box;
+  }
+  .alert {
+    @apply relative rounded-lg p-4 text-sm font-medium shadow-md;
+  }
+
+  .alert-info {
+    @apply bg-[#2d1b47] text-[#b19cd9] border border-[#7b3fa0];
+  }
+
+  .alert-info::before {
+    background-color: #7b3fa0;
+  }
+
+  .alert-success {
+    @apply bg-[#1a0b2e] text-[#d2b4de] border border-[#8e44ad];
+  }
+
+  .alert-success::before {
+    background-color: #8e44ad;
+  }
+
+  .alert-warning {
+    @apply bg-[#4a2c6b] text-[#f4ecf7] border border-[#b19cd9];
+  }
+
+  .alert-warning::before {
+    background-color: #b19cd9;
+  }
+
+  .alert-error {
+    @apply bg-[#5b2c87] text-white border border-[#d2b4de];
+  }
+
+  .alert-error::before {
+    background-color: #d2b4de;
+  }
+}
