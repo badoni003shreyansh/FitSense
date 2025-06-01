@@ -60,7 +60,6 @@ Method: Strength Training
 Goal: Muscle Gain
 
 Generate a complete, actionable training plan based on these parameters. Give output in a structured format that is easy to follow and implement. Ensure the plan is tailored to the user's fitness level and goals, providing a realistic and effective approach to achieving their desired results.
-Ensure the response is editable by ReactMarkdown and does not contain any HTML tags.
 `,
   });
 
