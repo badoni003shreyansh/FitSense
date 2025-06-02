@@ -10,6 +10,9 @@ function SignUp() {
       }}
     >
       <SignUpForm />
+      <div className="text-gray-500 text-sm mt-4">
+        <p>Made with ❤️ by Shreyansh Badoni</p>
+      </div>
     </div>
   );
 }

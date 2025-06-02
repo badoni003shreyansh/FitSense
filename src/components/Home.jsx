@@ -55,7 +55,7 @@ function Home() {
     >
       {!isLoggedIn && <Navigate to="/login" replace />}
       <button
-        className="btn-secondary absolute right-2 top-2 rounded-3xl px-4 py-2 text-sm font-semibold text-white bg-purple-950 hover:bg-purple-800 transition-colors duration-300"
+        className="btn-secondary absolute right-4 top-4 rounded-3xl px-4 py-2 text-sm font-semibold text-white bg-purple-950 hover:bg-purple-800 transition-colors duration-300"
         onClick={handleLogout}
       >
         Log Out
