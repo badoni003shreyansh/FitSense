@@ -2,15 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAmVz9-RST-Qwqdu9DQ_3iOgr8VU0z2aFc",
-  authDomain: "trainwise-a3b55.firebaseapp.com",
-  projectId: "trainwise-a3b55",
-  storageBucket: "trainwise-a3b55.firebasestorage.app",
-  messagingSenderId: "73548001873",
-  appId: "1:73548001873:web:e50f762c65f42dd97d3e70",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
