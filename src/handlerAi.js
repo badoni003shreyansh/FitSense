@@ -1,13 +1,12 @@
 import { GoogleGenAI } from "@google/genai";
+
 const AI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const ai = new GoogleGenAI({ apiKey: AI_API_KEY });
 
 export async function getResponsefromGem(data) {
   const response = await ai.models.generateContent({
     model: "gemini-2.0-flash",
-    contents: `# Custom Training Plan Generator Prompt
-
-You are a fitness expert tasked with creating personalized training plans. Based on the user's inputs, generate a comprehensive weekly training program that is practical, safe, and goal-oriented.
+    contents: `You are a fitness expert tasked with creating personalized training plans. Based on the user's inputs, generate a comprehensive weekly training program that is practical, safe, and goal-oriented.
 
 ## Input Variables:
 - **Training Days Per Week**: ${data.trainingDays}
@@ -56,12 +55,11 @@ Present a clear day-by-day breakdown using this format:
 
 ## Example Input:
 Training Days: 4 days per week
-Method: Strength Training  
+Method: Strength Training
 Goal: Muscle Gain
 
-Generate a complete, actionable training plan based on these parameters. Give output in a structured format that is easy to follow and implement. Ensure the plan is tailored to the user's fitness level and goals, providing a realistic and effective approach to achieving their desired results.
-`,
+Generate a complete, actionable training plan based on these parameters. Give output in a structured format that is easy to follow and implement. Ensure the plan is tailored to the user's fitness level and goals, providing a realistic and effective approach to achieving their desired results.`,
   });
 
-  return response.text;
+  return response.text.trim();
 }

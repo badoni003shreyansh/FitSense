@@ -12,6 +12,7 @@ export default function FormInput(props) {
     minLength,
     errors,
     placeholder,
+    labelClass,
   } = props;
 
   const validationRules = {
@@ -23,7 +24,7 @@ export default function FormInput(props) {
 
   return (
     <div className="flex flex-col w-full p-4">
-      <label className="px-2 py-2">{label}</label>
+      <label className={`px-2 py-2 ${labelClass}`}>{label}</label>
       <input
         className="px-4 py-2 border rounded-xl bg-gray-100 text-purple-950 focus:outline-none focus:ring-2 focus:ring-purple-700"
         type={type}

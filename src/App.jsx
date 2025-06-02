@@ -1,62 +1,20 @@
 import "./App.css";
-import FormAnswer from "./components/FormAnswer";
-import FormWrapper from "./components/FormWrapper";
-import { getResponsefromGem } from "./handlerAi";
-import React, { useState } from "react";
-import Alert from "./components/Alert";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import React from "react";
+import SignUp from "./components/SignUp";
 
 function App() {
-  const [answer, setAnswer] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const onSubmit = (data) => {
-    setLoading(true);
-    setAnswer("");
-    getResponsefromGem(data)
-      .then((response) => {
-        setAnswer(response);
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        setError(
-          error?.reponse?.data?.message ||
-            "An error occurred while processing your request. Please try again later."
-        );
-        setAnswer("");
-        async function resetError() {
-          await new Promise((resolve) => setTimeout(resolve, 4000));
-          setError("");
-        }
-        resetError();
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
   return (
-    <div
-      className="flex flex-col items-center justify-start min-h-screen w-full gap-8 p-16 pt-32"
-      style={{
-        background: `linear-gradient(to bottom, #d2b4de, #a569bd, #8e44ad, #5b2c87, #2d1b47, #0d051a)`,
-      }}
-    >
-      <h1 className="text-8xl font-extrabold text-[#46206f] tracking-tight drop-shadow-lg">
-        TrainWise
-      </h1>
-
-      <p className="text-xl md:text-2xl text-gray-800 font-medium max-w-2xl text-center mt-4">
-        Your Digital Coach for Real-World Gains
-      </p>
-      {error && <Alert message={error} />}
-      {/* Form */}
-      <FormWrapper onSubmit={onSubmit} loading={loading} />
-
-      {/* Answer below */}
-      {answer && <FormAnswer answers={answer} />}
-      <div className="text-gray-500 text-sm mt-4">
-        <p>Made with ❤️ by Shreyansh Badoni</p>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
