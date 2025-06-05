@@ -35,15 +35,13 @@ cd trainwise
 npm install
 ```
 ### 2. Create a <code>.env</code> file in the root directory and add:
-<code>
-  VITE_FIREBASE_API_KEY=your_firebase_api_key
-  VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-  VITE_FIREBASE_PROJECT_ID=your_project_id
-  VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-  VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-  VITE_FIREBASE_APP_ID=your_app_id
-  VITE_GEMINI_API_KEY=your_gemini_api_key
-</code>
+<code>VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_GEMINI_API_KEY=your_gemini_api_key</code>
 
 ### 3. Run the app locally
 ```bash
