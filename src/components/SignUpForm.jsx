@@ -14,12 +14,11 @@ const SignUpForm = () => {
   } = useForm();
   const onSubmit = async (data) => {
     try {
-      console.log("Form submitted with data:", data);
       await dosignUpWithEmailAndPassword(data.email, data.password).then(() => {
         setIsLoggedIn(true);
       });
     } catch (error) {
-      console.error("Sign-Up Error:", error.message);
+      alert("Sign-Up Error!!");
     }
   };
   if (isLoggedIn) {
