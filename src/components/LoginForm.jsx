@@ -21,7 +21,11 @@ function LoginForm() {
   const onSubmit = async (data) => {
     try {
       console.log("Form submitted with data:", data);
-      await dosignInWithEmailAndPassword(data.email, data.password);
+      await dosignInWithEmailAndPassword(data.email, data.password).catch(
+        (error) => {
+          alert("Wrong username or password!!");
+        }
+      );
     } catch (error) {
       console.error("Email/Password Sign-In Error:", error.message);
     }
