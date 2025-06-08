@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-const AI_API_KEY = process.env.VITE_GEMINI_API_KEY;
+const AI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const ai = new GoogleGenAI({ apiKey: AI_API_KEY });
 
 export async function getResponsefromGem(data) {
