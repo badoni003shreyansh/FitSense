@@ -8,5 +8,5 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  base: "/trainwise-fitness",
+  base: process.env.VITE_BASE_PATH || "/trainwise-fitness",
 });
